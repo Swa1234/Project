@@ -27,7 +27,7 @@
 </head><!--/head-->
 
 <body>
-    <c:import url='header.html' charEncoding='utf-8' />
+    <c:import url='header.jsp' charEncoding='utf-8' />
     
 	
 	<section id="slider"><!--slider-->

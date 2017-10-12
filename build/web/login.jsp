@@ -5,7 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri='http://java.sun.com/jstl/core' prefix='c' %>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,15 +42,24 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Đăng nhập vào tài khoản của bạn</h2>
-						<form action="#">
-							<input type="text" placeholder="Tên đăng nhập" />
-							<input type="email" placeholder="Mật khẩu" />
-							<span>
+						<form action="DoLogin">
+                                                    <input type="text" name="txtUsername" placeholder="Tên đăng nhập" />
+							<input type="password" name="txtPassword" placeholder="Mật khẩu" />
+<!--							<span>
 								<input type="checkbox" class="checkbox"> 
 								Lưu mật khẩu
-							</span>
+							</span>-->
 							<button type="submit" class="btn btn-default">Đăng Nhập</button>
 						</form>
+                                                
+                                                <c:if test="${sessionScope.LoginError != null}" >
+                                                    <h2 style="color: red">${sessionScope.LoginError}</h2>
+                                                    <%
+                                                    if(session.getAttribute("LoginError") != null){
+                                                        session.removeAttribute("LoginError");
+                                                    }
+                                                    %>
+                                                </c:if>
 					</div><!--/login form-->
 				</div>
 				<div class="col-sm-1">

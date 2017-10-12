@@ -9,7 +9,7 @@ package com.entity;
  *
  * @author Lee_Van_Trinh
  */
-public class Order_Detail {
+public class OrderDetail {
 
     private int quantity;
     private float price;
@@ -18,11 +18,11 @@ public class Order_Detail {
     private int oder_id;
     private int product_id;
 
-    public Order_Detail() {
+    public OrderDetail() {
     }
     
 
-    public Order_Detail(int quantity, float price, float discount, String order_detail_id, int oder_id, int product_id) {
+    public OrderDetail(int quantity, float price, float discount, String order_detail_id, int oder_id, int product_id) {
         this.quantity = quantity;
         this.price = price;
         this.discount = discount;

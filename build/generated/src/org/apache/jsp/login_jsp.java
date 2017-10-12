@@ -12,6 +12,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_import_url_charEncoding_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -21,10 +22,12 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_import_url_charEncoding_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
     _jspx_tagPool_c_import_url_charEncoding_nobody.release();
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -55,6 +58,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("<head>\n");
@@ -62,7 +66,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("    <meta name=\"description\" content=\"\">\n");
       out.write("    <meta name=\"author\" content=\"\">\n");
-      out.write("    <title>Thanh toán</title>\n");
+      out.write("    <title>Đăng nhập / Đăng ký</title>\n");
       out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
       out.write("    <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\">\n");
       out.write("    <link href=\"css/prettyPhoto.css\" rel=\"stylesheet\">\n");
@@ -92,16 +96,20 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<div class=\"row\">\n");
       out.write("\t\t\t\t<div class=\"col-sm-4 col-sm-offset-1\">\n");
       out.write("\t\t\t\t\t<div class=\"login-form\"><!--login form-->\n");
-      out.write("\t\t\t\t\t\t<h2>đăng nhập vào tài khoản của bạn</h2>\n");
-      out.write("\t\t\t\t\t\t<form action=\"#\">\n");
-      out.write("\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Tên đăng nhập\" />\n");
-      out.write("\t\t\t\t\t\t\t<input type=\"email\" placeholder=\"Mật khẩu\" />\n");
-      out.write("\t\t\t\t\t\t\t<span>\n");
+      out.write("\t\t\t\t\t\t<h2>Đăng nhập vào tài khoản của bạn</h2>\n");
+      out.write("\t\t\t\t\t\t<form action=\"DoLogin\">\n");
+      out.write("                                                    <input type=\"text\" name=\"txtUsername\" placeholder=\"Tên đăng nhập\" />\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"password\" name=\"txtPassword\" placeholder=\"Mật khẩu\" />\n");
+      out.write("<!--\t\t\t\t\t\t\t<span>\n");
       out.write("\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"checkbox\"> \n");
       out.write("\t\t\t\t\t\t\t\tLưu mật khẩu\n");
-      out.write("\t\t\t\t\t\t\t</span>\n");
+      out.write("\t\t\t\t\t\t\t</span>-->\n");
       out.write("\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default\">Đăng Nhập</button>\n");
       out.write("\t\t\t\t\t\t</form>\n");
+      out.write("                                                ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\n");
       out.write("\t\t\t\t\t</div><!--/login form-->\n");
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t\t<div class=\"col-sm-1\">\n");
@@ -109,7 +117,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t\t<div class=\"col-sm-4\">\n");
       out.write("\t\t\t\t\t<div class=\"signup-form\"><!--sign up form-->\n");
-      out.write("\t\t\t\t\t\t<h2>đăng ký người dùng mới!</h2>\n");
+      out.write("\t\t\t\t\t\t<h2>Đăng ký người dùng mới!</h2>\n");
       out.write("\t\t\t\t\t\t<form action=\"#\">\n");
       out.write("\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Tên tài khoản\"/>\n");
       out.write("\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Mật khẩu\"/>\n");
@@ -159,7 +167,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:import
-    org.apache.taglibs.standard.tag.el.core.ImportTag _jspx_th_c_import_0 = (org.apache.taglibs.standard.tag.el.core.ImportTag) _jspx_tagPool_c_import_url_charEncoding_nobody.get(org.apache.taglibs.standard.tag.el.core.ImportTag.class);
+    org.apache.taglibs.standard.tag.rt.core.ImportTag _jspx_th_c_import_0 = (org.apache.taglibs.standard.tag.rt.core.ImportTag) _jspx_tagPool_c_import_url_charEncoding_nobody.get(org.apache.taglibs.standard.tag.rt.core.ImportTag.class);
     _jspx_th_c_import_0.setPageContext(_jspx_page_context);
     _jspx_th_c_import_0.setParent(null);
     _jspx_th_c_import_0.setUrl("header.html");
@@ -181,12 +189,42 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.LoginError != null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                                                    <h2>");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.LoginError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("</h2>\n");
+        out.write("                                                ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
   private boolean _jspx_meth_c_import_1(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:import
-    org.apache.taglibs.standard.tag.el.core.ImportTag _jspx_th_c_import_1 = (org.apache.taglibs.standard.tag.el.core.ImportTag) _jspx_tagPool_c_import_url_charEncoding_nobody.get(org.apache.taglibs.standard.tag.el.core.ImportTag.class);
+    org.apache.taglibs.standard.tag.rt.core.ImportTag _jspx_th_c_import_1 = (org.apache.taglibs.standard.tag.rt.core.ImportTag) _jspx_tagPool_c_import_url_charEncoding_nobody.get(org.apache.taglibs.standard.tag.rt.core.ImportTag.class);
     _jspx_th_c_import_1.setPageContext(_jspx_page_context);
     _jspx_th_c_import_1.setParent(null);
     _jspx_th_c_import_1.setUrl("footer.html");
